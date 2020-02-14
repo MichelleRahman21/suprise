@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Anton|Roboto');
-/* Change the font to my font */
+
 .word {
 	font-family: 'Anton', sans-serif;
 	perspective: 1000px;
 }
-/* CHANGE THIS */
+
 .word span {
 	cursor: pointer;
 	display: inline-block;
@@ -12,7 +12,6 @@
 	user-select: none;
 	line-height: .8;
 }
-/* CHANGE THIS  */
 
 .word span:nth-child(1).active {
 	animation: balance 1.5s ease-out;
@@ -77,6 +76,9 @@
 	100% {
 		transform: rotateX(0deg);
 	}
+	12% {
+		transform: rotateX(240deg);
+	}
 }
 
 .word span:nth-child(4).active {
@@ -96,7 +98,23 @@
 .word span:nth-child(5).active {
 	animation: toplong 1.5s linear;
 }
-
+.word span:nth-child(6).active {
+	animation: rotate 1s ease-out;
+}
+.word span:nth-child(7).active {
+	animation: shrinkjump 1s ease-in-out;
+	transform-origin: bottom center;
+}
+.word span:nth-child(8).active {
+	animation: falling 2s ease-out;
+	transform-origin: bottom center;
+}
+.word span:nth-child(9).active {
+	animation: rotate 1s ease-out;
+}
+.word span:nth-child(10).active {
+	animation: toplong 1.5s linear;
+}
 @keyframes toplong {
 	10%, 40% {
 		transform: translateY(-48vh) scaleY(1);
@@ -109,16 +127,27 @@
 
 /* Other styles */
 body {
-	background-color: skyblue;
-	color: #fff;
+	background-color: #663300;
+	color: #000000;
 	display: flex;
 	font-family: 'Roboto', sans-serif;
-  /* CHANGE THIS */
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
 	height: 100vh;
 	margin: 0;
+}
+h3 {
+	font-size: 20px;
+}
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .fixed {
@@ -127,23 +156,3 @@ body {
 	left: 50%;
 	transform: translateX(-50%);
 }
-
-/* I DO NOT NEED THIS PART  */
-/*
-footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	text-align: center;
-	letter-spacing: 1px;
-}
-
-footer i {
-	color: red;
-}
-
-footer a {
-	color: #3C97BF;
-	text-decoration: none;
-} */
